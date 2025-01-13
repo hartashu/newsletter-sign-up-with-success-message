@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+  --color-tomato: #ff6257;
+  --color-dark-slate-grey: #242742;
+  --color-charcoal-grey: #36384e;
+  --color-grey: #9294a0;
+  --color-white: #ffffff;
+
+  --ff-base: "Roboto", serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* p {
+  text-wrap: pretty;
+} */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* 
+  Style
+*/
+
+body {
+  background-color: var(--color-charcoal-grey);
+  font-family: var(--ff-base);
+  font-size: 16px;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}
+
+.card {
+  width: 375px;
+  background-color: var(--color-white);
+}
+
+.card__text {
+  padding: 40px 24px;
+}
+
+.card__text-container {
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.card__title {
+  color: var(--color-dark-slate-grey);
+  font-weight: var(--fw-bold);
+  font-size: 40px;
+  line-height: 100%;
+}
+
+.card__desc {
+  color: var(--color-dark-slate-grey);
+}
+
+.card__list {
+  list-style-image: url(/assets/images/icon-list.svg);
+  padding-left: 24px;
+  gap: 10px;
+}
+
+.card__item {
+  color: var(--color-dark-slate-grey);
+  padding-left: 1ch;
+}
+
+.card__form-error-wrapper {
+  justify-content: space-between;
+}
+
+.card__form-title,
+.card__form-error {
+  color: var(--color-dark-slate-grey);
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.card__form-error {
+  color: var(--color-tomato);
+}
+
+.card__form-input {
+  color: var(--color-dark-slate-grey);
+  border: 1px solid rgba(25, 24, 43, 0.25);
+  border-radius: 8px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+}
+
+.button {
+  background-color: var(--color-dark-slate-grey);
+  color: var(--color-white);
+  font-weight: var(--fw-bold);
+  border: none;
+  border-radius: 8px;
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+
+.button:hover {
+  background-image: linear-gradient(to bottom left, #ff6a3a, #ff5278);
+}
+
+.button:active {
+  box-shadow: 0px 12px 20px rgba(255, 106, 58, 0.35);
+}
+
+.card-success {
+  background-color: white;
+  height: 100vh;
+  padding: 149px 24px 40px;
+
+  justify-content: space-between;
+}
+
+.card-success__icon {
+  margin-bottom: 40px;
+}
+
+.card-success__title {
+  color: var(--color-dark-slate-grey);
+  font-size: 40px;
+  line-height: 100%;
+  margin-bottom: 24px;
+}
+
+.card-success__desc {
+  color: var(--color-dark-slate-grey);
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+@media screen and (min-width: 928px) {
+  /* 
+    card
+  */
+
+  .card {
+    width: 928px;
+    border-radius: 36px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .card__text {
+    order: 1;
+    padding-left: 40px;
+  }
+
+  .card__media {
+    order: 2;
+    flex-basis: 400px;
+    flex-shrink: 0;
+  }
+
+  .card__title {
+    font-size: 56px;
+    line-height: 100%;
+  }
+
+  /* 
+    card-success
+  */
+
+  .card-success {
+    width: 504px;
+    height: 100%;
+    border-radius: 36px;
+    padding: 64px;
+    padding-top: 48px;
+    gap: 40px;
+  }
+
+  .card-success__title {
+    font-size: 56px;
+  }
+}
+
+/* 
+  Utility & Modifier Classes
+*/
+
+.card__form-input--is-error {
+  background-color: rgba(255, 98, 87, 0.15);
+  color: #ff6257;
+  border: 1px solid var(--color-tomato);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.is-hidden {
+  display: none;
+}
