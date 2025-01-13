@@ -93,7 +93,7 @@ body {
 }
 
 .card__list {
-  list-style-image: url('/assets/images/icon-list.svg');
+  list-style-image: url('../assets/images/icon-list.svg');
   padding-left: 24px;
   gap: 10px;
 }
